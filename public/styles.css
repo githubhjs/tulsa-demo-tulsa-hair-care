@@ -185,6 +185,22 @@ section { padding: 3.5rem 0; }
   background-position: center;
 }
 
+.testimonial-card {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+.stars { color: var(--accent); font-size: 1.3rem; letter-spacing: 0.15em; margin-bottom: 1rem; }
+.testimonial-quote {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0 0 1.25rem;
+}
+.testimonial-attribution { color: var(--muted); font-size: 0.95rem; }
+.testimonial-attribution strong { color: var(--fg); }
+
 .cta-banner {
   background: var(--accent);
   color: #fff;
