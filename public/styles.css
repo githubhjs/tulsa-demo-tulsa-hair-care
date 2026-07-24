@@ -68,18 +68,40 @@ nav.links a.cta {
 }
 
 .hero {
-  padding: 4.5rem 0 3.5rem;
+  position: relative;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  background-image: url('https://images.unsplash.com/photo-1626383137804-ff908d2753a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1600');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
 }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 2.5rem;
-  align-items: center;
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(10,8,6,0.82) 0%, rgba(10,8,6,0.55) 45%, rgba(10,8,6,0.25) 100%);
 }
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+}
+
+.hero-credit {
+  position: absolute;
+  z-index: 1;
+  right: 1rem;
+  bottom: 0.75rem;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.7);
+}
+.hero-credit a { color: rgba(255,255,255,0.85); text-decoration: underline; }
 
 @media (max-width: 760px) {
-  .hero-grid { grid-template-columns: 1fr; }
   nav.links a:not(.cta) { display: none; }
 }
 
@@ -90,9 +112,10 @@ nav.links a.cta {
   color: var(--accent);
   font-weight: 600;
 }
+.hero .eyebrow { color: #f0d9b0; }
 
-.hero h1 { font-size: 2.6rem; margin: 0.5rem 0 1rem; }
-.hero .subhead { color: var(--muted); font-size: 1.05rem; max-width: 42ch; }
+.hero h1 { font-size: 2.7rem; margin: 0.5rem 0 1rem; color: #fff; }
+.hero .subhead { color: rgba(255,255,255,0.88); font-size: 1.05rem; max-width: 42ch; }
 
 .cta-row { display: flex; gap: 0.8rem; margin-top: 1.75rem; flex-wrap: wrap; }
 
@@ -105,23 +128,7 @@ nav.links a.cta {
   font-size: 0.95rem;
 }
 .btn-primary { background: var(--accent); color: #fff; }
-.btn-ghost { border: 1.5px solid var(--border); color: var(--fg); }
-
-.hero-panel {
-  aspect-ratio: 4 / 3;
-  border-radius: 16px;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-  position: relative;
-  overflow: hidden;
-}
-.hero-panel::before, .hero-panel::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.12);
-}
-.hero-panel::before { width: 55%; aspect-ratio: 1; top: -15%; right: -10%; }
-.hero-panel::after { width: 35%; aspect-ratio: 1; bottom: -10%; left: -8%; background: rgba(0,0,0,0.15); }
+.btn-ghost { border: 1.5px solid rgba(255,255,255,0.6); color: #fff; }
 
 .trust-bar {
   background: var(--card);
